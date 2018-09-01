@@ -1,0 +1,67 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:mv="clr-namespace:Sigef.Poc.Ftcapp.Interface.ViewModelBase"
+    xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+    xmlns:tk="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
+
+    <Color x:Key="BlueNormal">#FF119eda</Color>
+    <Color x:Key="BlueDark">#FF0b6e98</Color>
+    <Color x:Key="BlueDark2">#FF052f41</Color>
+    <Color x:Key="BlueLight">#FF58bbe5</Color>
+    <Color x:Key="BlueLight2">#FFb7e1f3</Color>
+
+    <Color x:Key="RedNormal">#FFff0000</Color>
+    <Color x:Key="RedDark">#FFb20000</Color>
+    <Color x:Key="RedDark2">#FF4c0000</Color>
+    <Color x:Key="RedLight">#FFff4c4c</Color>
+    <Color x:Key="RedLight2">#FFffb2b2</Color>
+
+    <Color x:Key="GreenNormal">#FF008000</Color>
+    <Color x:Key="GreenDark">#FF005900</Color>
+    <Color x:Key="GreenDark2">#FF002600</Color>
+    <Color x:Key="GreenLight">#FF4ca64c</Color>
+    <Color x:Key="GreenLight2">#FFb2d8b2</Color>
+
+    <Color x:Key="GrayNormal">#FF808080</Color>
+    <Color x:Key="GrayDark">#FF595959</Color>
+    <Color x:Key="GrayDark2">#FF262626</Color>
+    <Color x:Key="GrayLight">#FFa6a6a6</Color>
+    <Color x:Key="GrayLight2">#FFd8d8d8</Color>
+
+    <!--  NORMAL  -->
+    <SolidColorBrush x:Key="NormalBackGround" Color="{DynamicResource BlueNormal}" />
+    <SolidColorBrush x:Key="NormalForemGround" Color="{DynamicResource BlueLight2}" />
+
+    <SolidColorBrush x:Key="NormalPressedBackGround" Color="{DynamicResource BlueLight2}" />
+    <SolidColorBrush x:Key="NormalPressedForenGound" Color="{DynamicResource BlueNormal}" />
+
+    <SolidColorBrush x:Key="NormalMouseOverBackGround" Color="{DynamicResource BlueLight}" />
+    <SolidColorBrush x:Key="NormalMouseOverForenGound" Color="{DynamicResource BlueDark}" />
+    <SolidColorBrush x:Key="NormalMouseOverBorder" Color="{DynamicResource BlueDark2}" />
+    <!--  SUCCESS  -->
+    <SolidColorBrush x:Key="SuccesBackGround" Color="{DynamicResource GreenNormal}" />
+    <SolidColorBrush x:Key="SuccesForemGround" Color="{DynamicResource GreenLight2}" />
+
+    <SolidColorBrush x:Key="SuccesPressedBackGround" Color="{DynamicResource GreenLight2}" />
+    <SolidColorBrush x:Key="SuccesPressedForenGound" Color="{DynamicResource GreenNormal}" />
+
+    <SolidColorBrush x:Key="WarningBackGround" Color="{DynamicResource GrayNormal}" />
+    <SolidColorBrush x:Key="WarningForemGround" Color="{DynamicResource GrayLight2}" />
+
+    <SolidColorBrush x:Key="WarningPressedBackGround" Color="{DynamicResource GrayLight2}" />
+    <SolidColorBrush x:Key="WarningPressedForenGound" Color="{DynamicResource GrayNormal}" />
+
+    <SolidColorBrush x:Key="ErrorBackGround" Color="{DynamicResource RedNormal}" />
+    <SolidColorBrush x:Key="ErrorForemGround" Color="{DynamicResource RedLight2}" />
+
+    <SolidColorBrush x:Key="ErrorPressedBackGround" Color="{DynamicResource RedLight2}" />
+    <SolidColorBrush x:Key="ErrorPressedForenGound" Color="{DynamicResource RedNormal}" />
+
+    <SolidColorBrush x:Key="ErrorMouseOverBackGround" Color="{DynamicResource RedLight2}" />
+    <SolidColorBrush x:Key="ErrorMouseOverForenGound" Color="{DynamicResource RedDark}" />
+    <SolidColorBrush x:Key="ErrorMouseOverBorder" Color="{DynamicResource RedDark2}" />
+</ResourceDictionary>

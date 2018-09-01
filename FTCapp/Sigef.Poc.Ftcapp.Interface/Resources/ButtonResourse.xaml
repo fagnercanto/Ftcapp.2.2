@@ -1,0 +1,360 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls">
+
+    <!--  Rectangle Button Style  -->
+
+    <Style x:Key="RectangleButtonMiniDefaultStyle" TargetType="Rectangle">
+        <Setter Property="Width" Value="10" />
+        <Setter Property="Height" Value="10" />
+        <Setter Property="Fill" Value="White" />
+    </Style>
+
+    <Style
+        x:Key="RectangleButtonMiniNormalStyle"
+        BasedOn="{StaticResource RectangleButtonMiniDefaultStyle}"
+        TargetType="Rectangle">
+        <Setter Property="OpacityMask" Value="{DynamicResource VisualBrushNormalStyle}" />
+    </Style>
+
+    <Style
+        x:Key="RectangleButtonMiniStyle"
+        BasedOn="{StaticResource RectangleButtonMiniDefaultStyle}"
+        TargetType="Rectangle">
+        <Setter Property="OpacityMask" Value="{DynamicResource VisualBrushNormalStyle}" />
+    </Style>
+
+    <Style
+        x:Key="RectangleButtonMiniSuccessStyle"
+        BasedOn="{StaticResource RectangleButtonMiniDefaultStyle}"
+        TargetType="Rectangle">
+        <Setter Property="OpacityMask" Value="{DynamicResource VisualBrushSuccessStyle}" />
+    </Style>
+
+    <Style
+        x:Key="RectangleButtonMiniFailStyle"
+        BasedOn="{StaticResource RectangleButtonMiniDefaultStyle}"
+        TargetType="Rectangle">
+        <Setter Property="OpacityMask" Value="{DynamicResource VisualBrushFailStyle}" />
+    </Style>
+
+    <!--  Button Border Style  -->
+    <Style x:Key="BorderButtonDefaultStyle" TargetType="Border">
+        <Setter Property="Width" Value="20" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="Margin" Value="{DynamicResource ButtonMargin}" />
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="BorderThickness" Value="2" />
+    </Style>
+
+    <Style
+        x:Key="BorderButtonStyle"
+        BasedOn="{StaticResource BorderButtonDefaultStyle}"
+        TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource ButtonBackGroundl}" />
+
+    </Style>
+
+    <Style
+        x:Key="BorderButtonNormalStyle"
+        BasedOn="{StaticResource BorderButtonDefaultStyle}"
+        TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource ButtonBackGroundNormal}" />
+
+    </Style>
+
+    <Style
+        x:Key="BorderButtonSuccessStyle"
+        BasedOn="{StaticResource BorderButtonDefaultStyle}"
+        TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource ButtonBackGroundSuccess}" />
+
+    </Style>
+
+    <Style
+        x:Key="BorderButtonFailStyle"
+        BasedOn="{StaticResource BorderButtonDefaultStyle}"
+        TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource ButtonBackGroundFail}" />
+
+    </Style>
+
+    <!--  Button Trigger Style  -->
+    <ControlTemplate x:Key="ControlTemplateminiButton" TargetType="Button">
+
+        <Border
+            x:Name="Border"
+            Style="{DynamicResource BorderButtonStyle}"
+            TextBlock.Foreground="{TemplateBinding Foreground}">
+            <Rectangle Style="{StaticResource RectangleButtonMiniStyle}" />
+        </Border>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsDefault" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackGround}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackGroundMouseOver}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackGroundPressed}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ControlTemplateminiSuccessButton" TargetType="Button">
+        <Border
+            x:Name="Border"
+            Style="{DynamicResource BorderButtonSuccessStyle}"
+            TextBlock.Foreground="{TemplateBinding Foreground}">
+            <Rectangle Style="{StaticResource RectangleButtonMiniSuccessStyle}" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsDefault" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonBorderSuccess}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackGroundSuccess}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonBorderSuccess}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackGroundMouseOverSuccess}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackGroundPressedSuccess}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ControlTemplateminiFailButton" TargetType="Button">
+        <Border
+            x:Name="Border"
+            Style="{DynamicResource BorderButtonFailStyle}"
+            TextBlock.Foreground="{TemplateBinding Foreground}">
+            <Rectangle Style="{StaticResource RectangleButtonMiniFailStyle}" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsDefault" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonBorderFail}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackGroundFail}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackGroundMouseOverFail}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackGroundPressedFail}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ControlTemplateminiNormalButton" TargetType="Button">
+        <Border
+            x:Name="Border"
+            Style="{DynamicResource BorderButtonNormalStyle}"
+            TextBlock.Foreground="{TemplateBinding Foreground}">
+            <Rectangle Style="{StaticResource RectangleButtonMiniNormalStyle}" />
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsDefault" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonBorderNormal}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackGroundNormal}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonBorderNormal}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackGroundMouseOverNormal}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource ButtonBorderNormal}" />
+                <Setter TargetName="Border" Property="Background" Value="{DynamicResource ButtonBackGroundPressed}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+
+
+
+    <Style x:Key="ButtonTriggers" TargetType="Button">
+        <Style.Triggers x:Uid="TriggerStyle">
+            <Trigger Property="IsDefault" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackGround}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackGroundMouseOver}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackGroundPressed}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonTriggersNormal" TargetType="Button">
+        <Style.Triggers>
+            <Trigger Property="IsDefault" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderNormal}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackGroundNormal}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderNormal}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackGroundMouseOverNormal}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderNormal}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackGroundPressed}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="ButtonTriggersFail" TargetType="Button">
+        <Style.Triggers>
+            <Trigger Property="IsDefault" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderFail}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackGroundFail}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackGroundMouseOverFail}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackGroundPressedFail}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonTriggersSuccess" TargetType="Button">
+        <Style.Triggers>
+            <Trigger Property="IsDefault" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderSuccess}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackGroundSuccess}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderSuccess}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackGroundMouseOverSuccess}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorder}" />
+                <Setter Property="Background" Value="{DynamicResource ButtonBackGroundPressedSuccess}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--  BUtton mini  style  -->
+
+    <Style
+        x:Key="ButtonMiniStyle"
+        BasedOn="{StaticResource ButtonTriggers}"
+        TargetType="Button">
+        <Setter Property="Template" Value="{DynamicResource ControlTemplateminiButton}" />
+    </Style>
+
+    <Style
+        x:Key="ButtonMiniNormalStyle"
+        BasedOn="{StaticResource ButtonTriggersNormal}"
+        TargetType="Button">
+        <Setter Property="Template" Value="{DynamicResource ControlTemplateminiNormalButton}" />
+    </Style>
+
+    <Style
+        x:Key="ButtonMiniFailStyle"
+        BasedOn="{StaticResource ButtonTriggersFail}"
+        TargetType="Button">
+        <Setter Property="Template" Value="{DynamicResource ControlTemplateminiFailButton}" />
+    </Style>
+
+    <Style
+        x:Key="ButtonMiniSuccessStyle"
+        BasedOn="{StaticResource ButtonTriggersSuccess}"
+        TargetType="Button">
+        <Setter Property="Template" Value="{DynamicResource ControlTemplateminiSuccessButton}" />
+    </Style>
+
+    <!--  BUtton padrao  style  -->
+
+    <Style
+        x:Key="ButtonStyle"
+        BasedOn="{StaticResource ButtonTriggers}"
+        TargetType="Button">
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Upper" />
+        <Setter Property="FontSize" Value="{DynamicResource TextBlocFontSizekNormal}" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Margin" Value="{DynamicResource ButtonMargin}" />
+        <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="MinWidth" Value="100" />
+        <Setter Property="Foreground" Value="{DynamicResource ButtonForenGround}" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBackGround}" />
+
+    </Style>
+
+    <Style
+        x:Key="ButtonNormalStyle"
+        BasedOn="{StaticResource ButtonTriggersNormal}"
+        TargetType="Button">
+
+        <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Upper" />
+        <Setter Property="MinWidth" Value="100" />
+        <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
+        <Setter Property="Margin" Value="{DynamicResource ButtonMargin}" />
+        <Setter Property="FontSize" Value="{DynamicResource TextBlocFontSizekNormal}" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBackGroundNormal}" />
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="BorderThickness" Value="2" />
+    </Style>
+
+    <Style
+        x:Key="ButtonSuccessStyle"
+        BasedOn="{StaticResource ButtonTriggersSuccess}"
+        TargetType="Button">
+
+        <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Upper" />
+        <Setter Property="MinWidth" Value="100" />
+        <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
+        <Setter Property="Margin" Value="{DynamicResource ButtonMargin}" />
+        <Setter Property="FontSize" Value="{DynamicResource TextBlocFontSizekNormal}" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBackGroundSuccess}" />
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="BorderThickness" Value="2" />
+    </Style>
+
+    <Style
+        x:Key="ButtonFailStyle"
+        BasedOn="{StaticResource ButtonTriggersFail}"
+        TargetType="Button">
+
+        <Setter Property="MinWidth" Value="100" />
+        <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
+        <Setter Property="Margin" Value="{DynamicResource ButtonMargin}" />
+        <Setter Property="FontSize" Value="{DynamicResource TextBlocFontSizekNormal}" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBackGroundPressedFail}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderFail}" />
+        <Setter Property="mah:ControlsHelper.ContentCharacterCasing" Value="Upper" />
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="BorderThickness" Value="2" />
+    </Style>
+
+</ResourceDictionary>

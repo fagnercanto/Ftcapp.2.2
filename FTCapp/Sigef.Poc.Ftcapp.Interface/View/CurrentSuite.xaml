@@ -1,0 +1,138 @@
+﻿<UserControl
+    x:Class="Sigef.Poc.Ftcapp.Interface.View.CurrentSuite"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ftc="clr-namespace:Sigef.Poc.Ftcapp.Interface.CustomControl"
+    xmlns:local="clr-namespace:Sigef.Poc.Ftcapp.Interface"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="clr-namespace:Sigef.Poc.Ftcapp.Interface.View"
+    Width="{Binding Source={StaticResource MVBaseViewModel}, Path=WidthPanelElemento, Mode=TwoWay}"
+    mc:Ignorable="d">
+    <ScrollViewer
+        BorderBrush="Red"
+        BorderThickness="5"
+        CanContentScroll="True"
+        VerticalScrollBarVisibility="Visible">
+        <StackPanel Width="{Binding Source={StaticResource MVBaseViewModel}, Path=WidthPanelElemento, Mode=TwoWay}">
+            <view:ExpanderView />
+            <Border
+                Grid.Row="2"
+                Grid.ColumnSpan="3"
+                Style="{DynamicResource PainelFooter}">
+                <WrapPanel>
+                    <Button
+                        Command="{Binding Source={StaticResource MVBaseViewModel}, Path=RODAR, Mode=TwoWay}"
+                        Content="Rodar"
+                        Style="{DynamicResource ButtonStyle}" />
+                    <Button
+                        Command="{Binding Source={StaticResource MVBaseViewModel}, Path=SCRAP_COMMAND, Mode=TwoWay}"
+                        Content="Atualizar Elementos"
+                        Style="{DynamicResource ButtonStyle}" />
+                    <Button
+                        Command="{Binding Source={StaticResource MVBaseViewModel}, Path=REFRESH, Mode=TwoWay}"
+                        Content="Refresh"
+                        Style="{DynamicResource ButtonNormalStyle}" />
+
+
+                </WrapPanel>
+            </Border>
+            <Expander Header="Casos de Uso" IsExpanded="True">
+                <StackPanel Orientation="Horizontal">
+
+                    <!--  LISTA SUITES  -->
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <Border Style="{DynamicResource BorderGridTitle}">
+                            <TextBlock Style="{DynamicResource TextBlockGridTitle}" Text="Suites" />
+                        </Border>
+                        <Border BorderBrush="{DynamicResource BlueColorSolidColor20}" BorderThickness="2">
+
+                            <ListView
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch"
+                                ItemsSource="{Binding Source={StaticResource MVBaseViewModel}, Path=Suites, Mode=TwoWay}"
+                                ScrollViewer.CanContentScroll="True"
+                                ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                SelectedItem="{Binding Source={StaticResource MVBaseViewModel}, Path=SelectedSuiteCurrent, Mode=TwoWay}"
+                                Style="{DynamicResource ListViewGridStyle}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <Button Command="{Binding Source={StaticResource MVBaseViewModel}, Path=ADD_SUITE, Mode=TwoWay}" Style="{DynamicResource ButtonMiniNormalStyle}" />
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=Codigo}" Header="codigo" />
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=Nome}" Header="Nome" />
+
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </Border>
+                    </StackPanel>
+                    <!--  LISTA CASOS  -->
+                    <StackPanel HorizontalAlignment="Stretch">
+                        <Border HorizontalAlignment="Stretch" Style="{DynamicResource BorderGridTitle}">
+                            <TextBlock Style="{DynamicResource TextBlockGridTitle}" Text="Casos de Teste" />
+                        </Border>
+                        <Border
+                            HorizontalAlignment="Stretch"
+                            BorderBrush="{DynamicResource BlueColorSolidColor20}"
+                            BorderThickness="2">
+                            <ListView
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch"
+                                AlternationCount="1000"
+                                ItemsSource="{Binding Source={StaticResource MVBaseViewModel}, Path=SelectedSuiteCurrent.Casos, Mode=TwoWay}"
+                                ScrollViewer.CanContentScroll="True"
+                                ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                SelectedItem="{Binding Source={StaticResource MVBaseViewModel}, Path=SelectedSuiteCurrent.SelectedCaso, Mode=TwoWay}"
+                                Style="{DynamicResource ListViewGridStyle}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn
+                                            Width="30"
+                                            DisplayMemberBinding="{Binding (ItemsControl.AlternationIndex), RelativeSource={RelativeSource AncestorType=ListViewItem}}"
+                                            Header="#" />
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=Nome}" Header="Nome" />
+                                        <GridViewColumn DisplayMemberBinding="{Binding Path=Transacao.NMTRANSACAO}" Header="Transacao" />
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+            </Expander>
+
+            <Expander
+                Header="Comandos"
+                IsExpanded="True"
+                ScrollViewer.CanContentScroll="True"
+                ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <local:PainelElementoView />
+            </Expander>
+
+            <Expander
+                ExpandDirection="Down"
+                Header="DetalhesComando"
+                ScrollViewer.CanContentScroll="True"
+                ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <StackPanel Orientation="Horizontal">
+                    <DataGrid
+                        x:Name="FtcOneDataGrid"
+                        AutoGenerateColumns="True"
+                        ItemsSource="{Binding Source={StaticResource MVBaseViewModel}, Path=SelectedSuiteCurrent.SelectedCaso.Comandos, Mode=TwoWay}"
+                        SelectedItem="{Binding Source={StaticResource MVBaseViewModel}, Path=SelectedSuiteCurrent.SelectedCaso.SelectedComand, Mode=TwoWay}" />
+                </StackPanel>
+            </Expander>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

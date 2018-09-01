@@ -1,0 +1,41 @@
+﻿<UserControl
+    x:Class="Sigef.Poc.Ftcapp.Interface.View.ExpanderView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dd="urn:gong-wpf-dragdrop"
+    xmlns:ftc="clr-namespace:Sigef.Poc.Ftcapp.Interface.CustomControl"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:view="Sigef.Poc.Ftcapp.Interface.View"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Expander
+            x:Name="Title"
+            Margin="4,0"
+            ExpandDirection="Down"
+            IsExpanded="True">
+
+            <StackPanel>
+
+                <ScrollViewer>
+                    <StackPanel
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Orientation="Vertical">
+                        <Border Style="{DynamicResource BorderGridTitle}">
+                            <TextBlock x:Name="TextBoxTitle" Style="{DynamicResource TextBlockGridTitle}" />
+                        </Border>
+                        <!--<ftc:FtcCCListView
+                            x:Name="FtcAppList"
+                            x:FieldModifier="public"
+                            MyItemsSource="{Binding Source={StaticResource MVBaseViewModel}, Path=SelectedSuiteCurrent.Casos, Mode=TwoWay}" />-->
+                        <ListView x:Name="ExpanderListView" />
+
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+
+        </Expander>
+    </Grid>
+</UserControl>

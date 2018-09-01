@@ -1,0 +1,225 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:mv="clr-namespace:FTCappInterface.ViewModel"
+    xmlns:tk="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
+
+    <!--  COLORS  -->
+    <Color x:Key="LightColor">#FFFFFFFF</Color>
+    <Color x:Key="DarkColor">#FF000000</Color>
+
+
+    <!--  Blue  -->
+
+    <Color x:Key="BlueLightColor">#FF086F9E</Color>
+    <Color x:Key="BlueColor">#FF119EDA</Color>
+    <!--  80%  -->
+    <Color x:Key="BlueColor80">#CC119EDA</Color>
+    <!--  60%  -->
+    <Color x:Key="BlueColor60">#99119EDA</Color>
+    <!--  40%  -->
+    <Color x:Key="BlueColor40">#66119EDA</Color>
+    <!--  20%  -->
+    <Color x:Key="BlueColor20">#33119EDA</Color>
+
+    <!--  RED  -->
+
+    <Color x:Key="RedLightColor">#FFA90E00</Color>
+
+    <Color x:Key="RedColor">#FFE51400</Color>
+    <!--  80%  -->
+    <Color x:Key="RedColor80">#CCE51400</Color>
+    <!--  60%  -->
+    <Color x:Key="RedColor60">#99E51400</Color>
+    <!--  40%  -->
+    <Color x:Key="RedColor40">#66E51400</Color>
+    <!--  20%  -->
+    <Color x:Key="RedColor20">#33E51400</Color>
+
+    <!--  Green  -->
+
+    <Color x:Key="GreenLightColor">#FF477D11</Color>
+
+    <Color x:Key="GreenColor">#FF60A917</Color>
+    <!--  80%  -->
+    <Color x:Key="GreenColor80">#CC60A917</Color>
+    <!--  60%  -->
+    <Color x:Key="GreenColor60">#9960A917</Color>
+    <!--  40%  -->
+    <Color x:Key="GreenColor40">#6660A917</Color>
+    <!--  20%  -->
+    <Color x:Key="GreenColor20">#3360A917</Color>
+
+    <!--  Yellow  -->
+
+    <Color x:Key="YellowLightColor">#FFBBA404</Color>
+
+    <Color x:Key="YellowColor">#FFFEDE06</Color>
+    <!--  80%  -->
+    <Color x:Key="YellowColor80">#CCFEDE06</Color>
+    <!--  60%  -->
+    <Color x:Key="YellowColor60">#99FEDE06</Color>
+    <!--  40%  -->
+    <Color x:Key="YellowColor40">#66FEDE06</Color>
+    <!--  20%  -->
+    <Color x:Key="YellowColor20">#33FEDE06</Color>
+
+
+    <!--  Taupe  -->
+
+    <Color x:Key="TaupeLightColor">#FF635939</Color>
+
+    <Color x:Key="TaupeColor">#FF87794E</Color>
+    <!--  80%  -->
+    <Color x:Key="TaupeColor80">#CC87794E</Color>
+    <!--  60%  -->
+    <Color x:Key="TaupeColor60">#9987794E</Color>
+    <!--  40%  -->
+    <Color x:Key="TaupeColor40">#6687794E</Color>
+    <!--  20%  -->
+    <Color x:Key="TaupeColor20">#3387794E</Color>
+
+    <!--  ColorBrush  -->
+    <VisualBrush
+        x:Key="VisualBrushNormalStyle"
+        Stretch="Fill"
+        Visual="{StaticResource appbar_add}" />
+    <VisualBrush
+        x:Key="VisualBrushSuccessStyle"
+        Stretch="Fill"
+        Visual="{StaticResource appbar_check}" />
+    <VisualBrush
+        x:Key="VisualBrushFailStyle"
+        Stretch="Fill"
+        Visual="{StaticResource appbar_close}" />
+
+    <SolidColorBrush x:Key="LightSolidColor" Color="{StaticResource LightColor}" />
+    <SolidColorBrush x:Key="DarkSolidColor" Color="{StaticResource DarkColor}" />
+
+    <SolidColorBrush x:Key="BlueLightSolidColor" Color="{StaticResource BlueLightColor}" />
+    <SolidColorBrush x:Key="BlueSolidColor" Color="{StaticResource BlueColor}" />
+    <SolidColorBrush x:Key="BlueColorSolidColor80" Color="{StaticResource BlueColor80}" />
+    <SolidColorBrush x:Key="BlueColorSolidColor60" Color="{StaticResource BlueColor60}" />
+    <SolidColorBrush x:Key="BlueColorSolidColor40" Color="{StaticResource BlueColor40}" />
+    <SolidColorBrush x:Key="BlueColorSolidColor20" Color="{StaticResource BlueColor20}" />
+
+    <SolidColorBrush x:Key="RedLightSolidColor" Color="{StaticResource RedLightColor}" />
+    <SolidColorBrush x:Key="RedSolidColor" Color="{StaticResource RedColor}" />
+    <SolidColorBrush x:Key="RedColorSolidColor80" Color="{StaticResource RedColor80}" />
+    <SolidColorBrush x:Key="RedColorSolidColor60" Color="{StaticResource RedColor60}" />
+    <SolidColorBrush x:Key="RedColorSolidColor40" Color="{StaticResource RedColor40}" />
+    <SolidColorBrush x:Key="RedColorSolidColor20" Color="{StaticResource RedColor20}" />
+
+    <SolidColorBrush x:Key="GreenLightSolidColor" Color="{StaticResource GreenLightColor}" />
+    <SolidColorBrush x:Key="GreenSolidColor" Color="{StaticResource GreenColor}" />
+    <SolidColorBrush x:Key="GreenColorSolidColor80" Color="{StaticResource GreenColor80}" />
+    <SolidColorBrush x:Key="GreenColorSolidColor60" Color="{StaticResource GreenColor60}" />
+    <SolidColorBrush x:Key="GreenColorSolidColor40" Color="{StaticResource GreenColor40}" />
+    <SolidColorBrush x:Key="GreenColorSolidColor20" Color="{StaticResource GreenColor20}" />
+
+    <SolidColorBrush x:Key="YellowLightSolidColor" Color="{StaticResource YellowLightColor}" />
+    <SolidColorBrush x:Key="YellowSolidColor" Color="{StaticResource YellowColor}" />
+    <SolidColorBrush x:Key="YellowColorSolidColor80" Color="{StaticResource YellowColor80}" />
+    <SolidColorBrush x:Key="YellowColorSolidColor60" Color="{StaticResource YellowColor60}" />
+    <SolidColorBrush x:Key="YellowColorSolidColor40" Color="{StaticResource YellowColor40}" />
+    <SolidColorBrush x:Key="YellowColorSolidColor20" Color="{StaticResource YellowColor20}" />
+
+    <SolidColorBrush x:Key="TaupeLightSolidColor" Color="{StaticResource TaupeLightColor}" />
+    <SolidColorBrush x:Key="TaupeSolidColor" Color="{StaticResource TaupeColor}" />
+    <SolidColorBrush x:Key="TaupeColorSolidColor80" Color="{StaticResource TaupeColor80}" />
+    <SolidColorBrush x:Key="TaupeColorSolidColor60" Color="{StaticResource TaupeColor60}" />
+    <SolidColorBrush x:Key="TaupeColorSolidColor40" Color="{StaticResource TaupeColor40}" />
+    <SolidColorBrush x:Key="TaupeColorSolidColor20" Color="{StaticResource TaupeColor20}" />
+    <!--  Control Brushes  -->
+    <!--  PAINEL  -->
+
+    <SolidColorBrush x:Key="PainelTitleBackGround" Color="{StaticResource BlueLightColor}" />
+    <SolidColorBrush x:Key="PainelTitleBackGroundFail" Color="{StaticResource RedLightColor}" />
+    <SolidColorBrush x:Key="PainelTitleBackGroundSuccess" Color="{StaticResource GreenLightColor}" />
+    <SolidColorBrush x:Key="PainelTitleBackGroundWarnning" Color="{StaticResource YellowLightColor}" />
+    <SolidColorBrush x:Key="PainelTitleBackGroundNormal" Color="{StaticResource TaupeLightColor}" />
+
+    <SolidColorBrush x:Key="PainelTitleBorder" Color="{StaticResource BlueLightColor}" />
+    <SolidColorBrush x:Key="PainelTitleBorderFail" Color="{StaticResource RedLightColor}" />
+    <SolidColorBrush x:Key="PainelTitleBorderSuccess" Color="{StaticResource GreenLightColor}" />
+    <SolidColorBrush x:Key="PainelTitleBorderWarnning" Color="{StaticResource YellowLightColor}" />
+    <SolidColorBrush x:Key="PainelTitleBorderTaupe" Color="{StaticResource TaupeLightColor}" />
+
+    <SolidColorBrush x:Key="PainelFooterBackGround" Color="{StaticResource BlueLightColor}" />
+    <SolidColorBrush x:Key="PainelFooterBackGroundFail" Color="{StaticResource RedLightColor}" />
+    <SolidColorBrush x:Key="PainelFooterBackGroundSuccess" Color="{StaticResource GreenLightColor}" />
+    <SolidColorBrush x:Key="PainelFooterBackGroundWarnning" Color="{StaticResource YellowLightColor}" />
+    <SolidColorBrush x:Key="PainelFooterBackGroundNormal" Color="{StaticResource TaupeLightColor}" />
+
+    <SolidColorBrush x:Key="PainelFooterBorder" Color="{StaticResource BlueLightColor}" />
+    <SolidColorBrush x:Key="PainelFooterBorderFail" Color="{StaticResource RedLightColor}" />
+    <SolidColorBrush x:Key="PainelFooterBorderSuccess" Color="{StaticResource GreenLightColor}" />
+    <SolidColorBrush x:Key="PainelFooterBorderWarnning" Color="{StaticResource YellowLightColor}" />
+    <SolidColorBrush x:Key="PainelFooterBorderTaupe" Color="{StaticResource TaupeLightColor}" />
+
+    <SolidColorBrush x:Key="PainelListBackGround" Color="{StaticResource BlueColor20}" />
+    <SolidColorBrush x:Key="PainelListBackGroundFail" Color="{StaticResource RedColor20}" />
+    <SolidColorBrush x:Key="PainelListBackGroundSuccess" Color="{StaticResource GreenColor20}" />
+    <SolidColorBrush x:Key="PainelListBackGroundWarnning" Color="{StaticResource YellowColor20}" />
+    <SolidColorBrush x:Key="PainelListBackGroundNormal" Color="{StaticResource TaupeColor20}" />
+
+    <SolidColorBrush x:Key="PainelListBorder" Color="{StaticResource BlueLightColor}" />
+    <SolidColorBrush x:Key="PainelListBorderFail" Color="{StaticResource RedLightColor}" />
+    <SolidColorBrush x:Key="PainelListBorderSuccess" Color="{StaticResource GreenLightColor}" />
+    <SolidColorBrush x:Key="PainelListBorderWarnning" Color="{StaticResource YellowLightColor}" />
+    <SolidColorBrush x:Key="PainelListBorderTaupe" Color="{StaticResource TaupeLightColor}" />
+    <!--  TITLE  -->
+    <SolidColorBrush x:Key="TextBlockBackGroundTitle" Color="{StaticResource BlueLightColor}" />
+    <SolidColorBrush x:Key="TextBlockBackGroundTitleFail" Color="{StaticResource RedLightColor}" />
+    <SolidColorBrush x:Key="TextBlockBackGroundTitleSuccess" Color="{StaticResource GreenLightColor}" />
+    <SolidColorBrush x:Key="TextBlockBackGroundTitleWarnning" Color="{StaticResource YellowLightColor}" />
+    <SolidColorBrush x:Key="TextBlockBackGroundTitleNormal" Color="{StaticResource TaupeLightColor}" />
+
+    <SolidColorBrush x:Key="TextBlockForengroundTitle" Color="{StaticResource LightColor}" />
+    <SolidColorBrush x:Key="TextBlockForengroundTitleFail" Color="{StaticResource LightColor}" />
+    <SolidColorBrush x:Key="TextBlockForengroundTitleSuccess" Color="{StaticResource LightColor}" />
+    <SolidColorBrush x:Key="TextBlockForengroundTitleWarnning" Color="{StaticResource LightColor}" />
+    <SolidColorBrush x:Key="TextBlockForengroundTitleNormal" Color="{StaticResource LightColor}" />
+
+    <!--  BUTTON  -->
+
+    <SolidColorBrush x:Key="ButtonBackGround" Color="{StaticResource BlueColor}" />
+    <SolidColorBrush x:Key="ButtonBackGroundFail" Color="{StaticResource RedColor}" />
+    <SolidColorBrush x:Key="ButtonBackGroundSuccess" Color="{StaticResource GreenColor}" />
+    <SolidColorBrush x:Key="ButtonBackGroundWarnning" Color="{StaticResource YellowColor}" />
+    <SolidColorBrush x:Key="ButtonBackGroundNormal" Color="{StaticResource TaupeColor}" />
+
+    <SolidColorBrush x:Key="ButtonBorder" Color="{StaticResource BlueLightColor}" />
+    <SolidColorBrush x:Key="ButtonBorderFail" Color="{StaticResource RedLightColor}" />
+    <SolidColorBrush x:Key="ButtonBorderSuccess" Color="{StaticResource GreenLightColor}" />
+    <SolidColorBrush x:Key="ButtonBorderWarnning" Color="{StaticResource YellowLightColor}" />
+    <SolidColorBrush x:Key="ButtonBorderNormal" Color="{StaticResource TaupeLightColor}" />
+
+    <SolidColorBrush x:Key="ButtonBackGroundMouseOver" Color="{StaticResource BlueColor60}" />
+    <SolidColorBrush x:Key="ButtonBackGroundMouseOverFail" Color="{StaticResource RedColor60}" />
+    <SolidColorBrush x:Key="ButtonBackGroundMouseOverSuccess" Color="{StaticResource GreenColor60}" />
+    <SolidColorBrush x:Key="ButtonBackGroundMouseOverWarnning" Color="{StaticResource YellowColor60}" />
+    <SolidColorBrush x:Key="ButtonBackGroundMouseOverNormal" Color="{StaticResource TaupeColor60}" />
+
+    <SolidColorBrush x:Key="ButtonForenGroundMouserOver" Color="{StaticResource BlueColor}" />
+    <SolidColorBrush x:Key="ButtonForenGroundMouserOverForenGroundFail" Color="{StaticResource RedColor}" />
+    <SolidColorBrush x:Key="ButtonForenGroundMouserOverSuccess" Color="{StaticResource GreenColor}" />
+    <SolidColorBrush x:Key="ButtonForenGroundMouserOverWarnning" Color="{StaticResource YellowColor}" />
+    <SolidColorBrush x:Key="ButtonForenGroundMouserOverTaupe" Color="{StaticResource TaupeColor}" />
+
+    <SolidColorBrush x:Key="ButtonBackGroundPressed" Color="{StaticResource BlueLightColor}" />
+    <SolidColorBrush x:Key="ButtonBackGroundPressedFail" Color="{StaticResource RedLightColor}" />
+    <SolidColorBrush x:Key="ButtonBackGroundPressedSuccess" Color="{StaticResource GreenLightColor}" />
+    <SolidColorBrush x:Key="ButtonBackGroundPressedWarnning" Color="{StaticResource YellowLightColor}" />
+    <SolidColorBrush x:Key="ButtonBackGroundPressedTaupe" Color="{StaticResource TaupeLightColor}" />
+
+    <SolidColorBrush x:Key="ButtonForenGroundPressed" Color="{StaticResource DarkColor}" />
+    <SolidColorBrush x:Key="ButtonForenGroundPressedFail" Color="{StaticResource DarkColor}" />
+    <SolidColorBrush x:Key="ButtonForenGroundPressedSuccess" Color="{StaticResource DarkColor}" />
+    <SolidColorBrush x:Key="ButtonForenGroundPressedWarnning" Color="{StaticResource DarkColor}" />
+    <SolidColorBrush x:Key="ButtonForenGroundPressedTaupe" Color="{StaticResource DarkColor}" />
+
+</ResourceDictionary>

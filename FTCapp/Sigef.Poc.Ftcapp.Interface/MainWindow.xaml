@@ -1,0 +1,231 @@
+﻿<Controls:MetroWindow
+    x:Class="Sigef.Poc.Ftcapp.Interface.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:Entidade="clr-namespace:Sigef.Poc.Ftcapp.Entidade"
+    xmlns:c="clr-namespace:Sigef.Poc.Ftcapp.Interface.ViewModelBase"
+    xmlns:dd="urn:gong-wpf-dragdrop"
+    xmlns:dockablz="clr-namespace:Dragablz.Dockablz;assembly=Dragablz"
+    xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+    xmlns:local="clr-namespace:Sigef.Poc.Ftcapp.Interface"
+    xmlns:mv="clr-namespace:Sigef.Poc.Ftcapp.Interface.ViewModelBase"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:tk="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+    xmlns:view="clr-namespace:Sigef.Poc.Ftcapp.Interface.View"
+    x:Name="MainFTC"
+    Title="SIGEF TESTE"
+    Width="1200"
+    Height="600"
+    BorderThickness="0"
+    GlowBrush="Black"
+    WindowStartupLocation="CenterScreen"
+    WindowState="Maximized"
+    WindowTransitionsEnabled="True">
+
+    <StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!--<RowDefinition x:Name="TopPanelColumnDefinition" Height="80" />
+                    <RowDefinition Height="4" />-->
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        x:Name="LetfColumn"
+                        Width="{Binding Source={StaticResource MVBaseViewModel}, Path=WidthLeftPanelMain, Mode=TwoWay}"
+                        ScrollViewer.IsDeferredScrollingEnabled="True" />
+                    <ColumnDefinition Width="4" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--  TOP  -->
+                <!--<dockablz:Layout
+                    x:Name="Topo"
+                    Grid.Row="0"
+                    Grid.ColumnSpan="6">
+                    <dragablz:TabablzControl
+                        x:Name="TopPanelTabControl"
+                        IsDraggingWindowChanged="TopPanelTabControl_IsDraggingWindowChanged"
+                        IsEmptyChanged="LeftPanelTabControl_OnIsEmptyChanged">
+
+                        <TabItem
+                            Height="50"
+                            Margin="-5"
+                            Padding="-5">
+
+                            <TabItem.Header>
+
+
+                                <Button
+                                    Margin="-5"
+                                    Content="Menu"
+                                    Style="{DynamicResource ButtonStyle}" />
+
+
+                            </TabItem.Header>
+                            <Canvas
+                                Width="100"
+                                Height="100"
+                                Background="red">
+                                <TextBlock>SCRAP</TextBlock>
+                            </Canvas>
+                -->
+                <!--<local:ScrappView x:Name="scrapptb" />-->
+                <!--
+
+
+
+
+                        </TabItem>
+
+
+                    </dragablz:TabablzControl>
+                </dockablz:Layout>-->
+
+                <!--<GridSplitter
+                    Grid.Row="1"
+                    Grid.ColumnSpan="6"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    ResizeBehavior="PreviousAndNext"
+                    ResizeDirection="Rows" />-->
+
+                <!--  LEFT  -->
+                <dockablz:Layout
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    ScrollViewer.CanContentScroll="True">
+                    <dragablz:TabablzControl x:Name="LeftPanelTabControl">
+                        <TabItem
+                            HorizontalAlignment="Stretch"
+                            Header="Testes"
+                            IsSelected="False">
+
+                            <view:CurrentSuite />
+                        </TabItem>
+                        <!--<TabItem
+                            HorizontalAlignment="Stretch"
+                            Header="SShot Caso"
+                            IsSelected="False">
+
+                            <Canvas
+                                Width="100"
+                                Height="100"
+                                Background="red">
+                                <TextBlock>Resultado</TextBlock>
+                            </Canvas>
+                        -->
+                        <!--<local:TestResult />-->
+                        <!--
+
+
+                        </TabItem>
+                        <TabItem
+                            HorizontalAlignment="Stretch"
+                            Header="SShot Com"
+                            IsSelected="False">
+
+                            <Canvas
+                                Width="100"
+                                Height="100"
+                                Background="red">
+                                <TextBlock>ScrenShot</TextBlock>
+                            </Canvas>
+                        -->
+                        <!--<local:CmdScrenShot />-->
+                        <!--
+
+
+                        </TabItem>
+                        <TabItem
+                            HorizontalAlignment="Stretch"
+                            Header="Scrap Config"
+                            IsSelected="False">
+
+                            <Canvas
+                                Width="100"
+                                Height="100"
+                                Background="red">
+                                <TextBlock>Config</TextBlock>
+                            </Canvas>
+                        -->
+                        <!--<local:ConfigView />-->
+                        <!--
+
+
+                        </TabItem>-->
+
+                    </dragablz:TabablzControl>
+                </dockablz:Layout>
+
+                <GridSplitter
+                    x:Name="GridSplitter"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    ResizeBehavior="PreviousAndNext"
+                    ResizeDirection="Columns" />
+
+                <!--  CENTRAL  -->
+                <dockablz:Layout Grid.Row="2" Grid.Column="2">
+
+                    <dragablz:TabablzControl x:Name="CenterPanelTabControl" IsEmptyChanged="LeftPanelTabControl_OnIsEmptyChanged">
+
+                        <TabItem Header="Resultados" IsSelected="True">
+                            <view:ConsultaSuite />
+                            <!--<local:PainelElementoView />-->
+
+
+                        </TabItem>
+
+
+
+                        <!--<TabItem Header="Painel Result" IsSelected="False">
+
+                    <local:TestResult />
+
+
+                </TabItem>-->
+                    </dragablz:TabablzControl>
+                </dockablz:Layout>
+
+                <!--<GridSplitter
+                    Grid.Row="2"
+                    Grid.Column="3"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    ResizeBehavior="PreviousAndNext"
+                    ResizeDirection="Columns" />-->
+
+                <!--  Rigth  -->
+                <!--<dockablz:Layout Grid.Row="2" Grid.Column="5">
+                    <dragablz:TabablzControl x:Name="RigthPanelTabControl" IsEmptyChanged="LeftPanelTabControl_OnIsEmptyChanged">
+                        <TabItem Header="Elementos Info" IsSelected="False">
+                            <Canvas
+                                Width="100"
+                                Height="100"
+                                Background="red">
+                                <TextBlock>Elemento INFO</TextBlock>
+                            </Canvas>
+                -->
+                <!--<local:PainelElementoInfo />-->
+                <!--
+
+
+                        </TabItem>
+
+                    </dragablz:TabablzControl>
+                </dockablz:Layout>-->
+
+            </Grid>
+
+        </ScrollViewer>
+    </StackPanel>
+
+
+</Controls:MetroWindow>

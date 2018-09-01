@@ -1,0 +1,42 @@
+﻿<Controls:MetroWindow
+    x:Class="Sigef.Poc.Ftcapp.Interface.ChildWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:dockablz="clr-namespace:Dragablz.Dockablz;assembly=Dragablz"
+    xmlns:dragablz="http://dragablz.net/winfx/xaml/dragablz"
+    xmlns:local="clr-namespace:Sigef.Poc.Ftcapp.Interface"
+    HorizontalAlignment="Center"
+    VerticalAlignment="Center"
+    HorizontalContentAlignment="Center"
+    VerticalContentAlignment="Center"
+    Controls:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True"
+    BorderThickness="2"
+    GlowBrush="Black"
+    Loaded="MetroWindow_Loaded"
+    ResizeMode="CanResizeWithGrip"
+    ShowCloseButton="False"
+    ShowMaxRestoreButton="True"
+    ShowMinButton="True"
+    ShowTitleBar="True"
+    WindowTransitionsEnabled="True">
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <dockablz:Layout>
+            <dragablz:TabablzControl
+                x:Name="ChildWindowTabablzControl"
+                ShowDefaultAddButton="False"
+                ShowDefaultCloseButton="False">
+                <dragablz:TabablzControl.InterTabController>
+                    <dragablz:InterTabController MoveWindowWithSolitaryTabs="True">
+                        <dragablz:InterTabController.InterTabClient>
+                            <local:Tab x:Name="tabchild" />
+
+                        </dragablz:InterTabController.InterTabClient>
+                    </dragablz:InterTabController>
+                </dragablz:TabablzControl.InterTabController>
+            </dragablz:TabablzControl>
+        </dockablz:Layout>
+    </Grid>
+</Controls:MetroWindow>

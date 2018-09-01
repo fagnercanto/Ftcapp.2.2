@@ -1,0 +1,94 @@
+﻿<UserControl
+    x:Class="Sigef.Poc.Ftcapp.Interface.LOG"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <StackPanel>
+        <Button Style="{DynamicResource NormalButton}" />
+        <Button Style="{DynamicResource AddButton}" />
+        <Button Style="{DynamicResource DelButton}" />
+        <Border
+            Margin="0,2"
+            Background="{StaticResource AccentBaseColorBrush}"
+            DockPanel.Dock="Bottom">
+            <TextBlock
+                VerticalAlignment="Center"
+                FontWeight="Bold"
+                Foreground="{StaticResource IdealForegroundColorBrush}"
+                Text="LOG" />
+        </Border>
+        <ListBox
+            x:Name="ListBoxCasos"
+            ItemsSource="{Binding Source={StaticResource MVBaseViewModel}, Path=VM.SelectedCaso.Comandos, Mode=TwoWay}"
+            SelectedItem="{Binding Source={StaticResource MVBaseViewModel}, Path=VM.SelectedCaso.SelectedComando, Mode=TwoWay}">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Padding" Value="0" />
+                    <Setter Property="Margin" Value="2" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+
+                    <Border BorderBrush="{Binding Path=Cor, Mode=TwoWay}" BorderThickness="3">
+                        <Grid Margin="0,0">
+                            <Grid.RowDefinitions>
+
+                                <RowDefinition Height="*" />
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="25" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel
+                                Name="stnome"
+                                Grid.Column="0"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+                                <TextBlock Margin="2,0" Text="{Binding Path=Id, Mode=TwoWay}" />
+                                <TextBlock Margin="2,0" Text="{Binding Path=Elemento.Nome, Mode=TwoWay}" />
+                                <TextBlock Margin="2,0" Text="{Binding Path=TipoControle, Mode=TwoWay}" />
+                            </StackPanel>
+
+                            <StackPanel
+                                Grid.Column="2"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+
+                                <Button
+                                    Command="{Binding Source={StaticResource ResourceKey=MVBaseViewModel}, Path=ADD_CASO}"
+                                    CommandParameter="{Binding}"
+                                    Style="{StaticResource AddButton}" />
+
+                            </StackPanel>
+
+                        </Grid>
+                    </Border>
+
+
+
+
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+
+                <ItemsPanelTemplate>
+
+                    <WrapPanel
+                        Name="wrap"
+                        HorizontalAlignment="Center"
+                        Orientation="Vertical" />
+
+                </ItemsPanelTemplate>
+
+            </ListBox.ItemsPanel>
+
+        </ListBox>
+    </StackPanel>
+</UserControl>

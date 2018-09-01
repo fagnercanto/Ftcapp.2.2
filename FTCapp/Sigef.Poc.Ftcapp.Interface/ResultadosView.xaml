@@ -1,0 +1,167 @@
+﻿<UserControl
+    x:Class="Sigef.Poc.Ftcapp.Interface.ResultadosView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Sigef.Poc.Ftcapp.Interface"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <Expander ExpandDirection="Down" Header="Todos">
+                <Grid>
+
+                    <ScrollViewer DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Auto">
+                        <ListView
+                            Name="listTodosResultados"
+                            Height="200"
+                            Margin="5,0"
+                            ItemsSource="{Binding Source={StaticResource MVBaseViewModel}, Path=Resultados, Mode=OneWay}"
+                            SelectedItem="{Binding Source={StaticResource MVBaseViewModel}, Path=SelectedResultado, Mode=TwoWay}"
+                            SelectionChanged="ListView_SelectionChanged">
+                            <ListView.View>
+
+                                <GridView AllowsColumnReorder="True" KeyboardNavigation.TabNavigation="Continue">
+                                    <GridViewColumn
+                                        Width="20"
+                                        DisplayMemberBinding="{Binding Path=Id, Mode=TwoWay}"
+                                        Header="ID" />
+                                    <GridViewColumn Header="Caso Teste">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock
+                                                        Width="20"
+                                                        Margin="1,0"
+                                                        Text="{Binding Path=IdCaso, Mode=TwoWay}" />
+                                                    <TextBlock Margin="1,0" Text="{Binding Path=Nome, Mode=TwoWay}" />
+                                                    <TextBlock Margin="1,0" Text="{Binding Path=NomeEditavel, Mode=TwoWay}" />
+                                                </StackPanel>
+
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=MSG, Mode=TwoWay}" Header="Mensagem" />
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=Data, StringFormat={}{0:dd/mm/yyyy hh:mm}, Mode=TwoWay}" Header="Data" />
+                                    <GridViewColumn Width="80" Header="Passou">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Canvas
+                                                    Width="80"
+                                                    Height="20"
+                                                    HorizontalAlignment="Stretch"
+                                                    VerticalAlignment="Stretch"
+                                                    Background="{Binding Path=Cor, Mode=TwoWay}" />
+
+
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </ScrollViewer>
+                </Grid>
+            </Expander>
+            <Expander ExpandDirection="Down" Header="{Binding Source={StaticResource MVBaseViewModel}, Path=VM.SelectedCaso.Id, Mode=TwoWay}">
+                <Grid>
+
+                    <ScrollViewer DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Auto">
+                        <ListView
+                            Name="listResultados"
+                            Height="200"
+                            Margin="5,0"
+                            ItemsSource="{Binding Source={StaticResource MVBaseViewModel}, Path=VM.SelectedCaso.Resultados, Mode=TwoWay}"
+                            SelectedItem="{Binding Source={StaticResource MVBaseViewModel}, Path=VM.SelectedCaso.SelectedResultado, Mode=TwoWay}"
+                            SelectionChanged="ListView_SelectionChanged">
+                            <ListView.View>
+
+                                <GridView AllowsColumnReorder="True" KeyboardNavigation.TabNavigation="Continue">
+                                    <GridViewColumn
+                                        Width="20"
+                                        DisplayMemberBinding="{Binding Path=Id, Mode=TwoWay}"
+                                        Header="ID" />
+                                    <GridViewColumn Header="Caso Teste">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock
+                                                        Width="20"
+                                                        Margin="1,0"
+                                                        Text="{Binding Path=IdCaso, Mode=TwoWay}" />
+                                                    <TextBlock Margin="1,0" Text="{Binding Path=Nome, Mode=TwoWay}" />
+                                                    <TextBlock Margin="1,0" Text="{Binding Path=NomeEditavel, Mode=TwoWay}" />
+                                                </StackPanel>
+
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=MSG, Mode=TwoWay}" Header="Mensagem" />
+                                    <GridViewColumn DisplayMemberBinding="{Binding Path=Data, StringFormat={}{0:dd/mm/yyyy hh:mm}, Mode=TwoWay}" Header="Data" />
+                                    <GridViewColumn Width="80" Header="Passou">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Canvas
+                                                    Width="80"
+                                                    Height="20"
+                                                    HorizontalAlignment="Stretch"
+                                                    VerticalAlignment="Stretch"
+                                                    Background="{Binding Path=Cor, Mode=TwoWay}" />
+
+
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </ScrollViewer>
+                </Grid>
+            </Expander>
+            <Expander ExpandDirection="Down" Header="Detalhes">
+                <ScrollViewer DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Auto">
+                    <ListView
+                        Height="200"
+                        Margin="5,0"
+                        DockPanel.Dock="Bottom"
+                        ItemsSource="{Binding Source={StaticResource MVBaseViewModel}, Path=VM.SelectedCaso.SelectedResultado.Comandos, Mode=TwoWay}"
+                        SelectedItem="{Binding Source={StaticResource MVBaseViewModel}, Path=VM.SelectedCaso.SelectedResultado.SelectedComand, Mode=TwoWay}">
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="True" KeyboardNavigation.TabNavigation="Continue">
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Elemento.Nome, Mode=TwoWay}" Header="Nome" />
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Elemento.Id, Mode=TwoWay}" Header="ID" />
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=SelectedComandoSugerido, Mode=TwoWay}" Header="Comando" />
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=ValueText, Mode=TwoWay}" Header="Valor" />
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Valor, Mode=TwoWay}" Header="Valor Elemento" />
+
+
+                                <GridViewColumn Width="80" Header="tempo">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Path=Diferenca}" />
+
+
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+
+                                <GridViewColumn Width="80" Header="Passou">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Canvas
+                                                Width="80"
+                                                Height="20"
+                                                HorizontalAlignment="Stretch"
+                                                VerticalAlignment="Stretch"
+                                                Background="{Binding Path=Cor, Mode=TwoWay}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </ScrollViewer>
+            </Expander>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

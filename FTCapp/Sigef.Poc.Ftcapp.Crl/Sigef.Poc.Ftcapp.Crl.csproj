@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CA0A26B2-F737-48B7-856F-62560EC945CB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sigef.Poc.Ftcapp.Crl</RootNamespace>
+    <AssemblyName>Sigef.Poc.Ftcapp.Crl</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FtcAppCrl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sigef.Poc.Ftcapp.Builder\Sigef.Poc.Ftcapp.Builder.csproj">
+      <Project>{47d1e625-0f74-4949-a503-ec6017d5eb27}</Project>
+      <Name>Sigef.Poc.Ftcapp.Builder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sigef.Poc.Ftcapp.Entidade\Sigef.Poc.Ftcapp.Entidade.csproj">
+      <Project>{55be782b-f63f-49f3-9b06-816a531a3229}</Project>
+      <Name>Sigef.Poc.Ftcapp.Entidade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sigef.Poc.Ftcapp.Service\Sigef.Poc.Ftcapp.Service.csproj">
+      <Project>{f4b2c288-965f-46fc-ab22-5fdb52373e08}</Project>
+      <Name>Sigef.Poc.Ftcapp.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SIGEF.POC.FTCapp.Util\Sigef.Poc.Ftcapp.Util.csproj">
+      <Project>{155c8f89-c4d0-4b66-b2ad-8dc9a646da1e}</Project>
+      <Name>Sigef.Poc.Ftcapp.Util</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sigef.Poc.Ftcapp.WebDriver\Sigef.Poc.Ftcapp.WebDriver.csproj">
+      <Project>{f10437cd-0e2d-4be6-b9b3-4e01993e6559}</Project>
+      <Name>Sigef.Poc.Ftcapp.WebDriver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

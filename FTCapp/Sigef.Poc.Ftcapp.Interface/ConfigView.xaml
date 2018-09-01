@@ -1,0 +1,77 @@
+﻿<UserControl
+    x:Class="Sigef.Poc.Ftcapp.Interface.ConfigView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dg="clr-namespace:Microsoft.Windows.Controls;assembly=WPFToolkit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+    mc:Ignorable="d">
+    <StackPanel MaxHeight="800">
+        <ScrollViewer MaxHeight="400" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+
+                <dg:DataGrid
+                    Name="ScrapRules"
+                    Height="400"
+                    MinHeight="200"
+                    Margin="2,2"
+                    HorizontalAlignment="Stretch"
+                    AlternationCount="2"
+                    AreRowDetailsFrozen="True"
+                    AutoGenerateColumns="False"
+                    CanUserAddRows="True"
+                    CanUserDeleteRows="True"
+                    HeadersVisibility="Column"
+                    ItemsSource="{Binding Source={StaticResource MVBaseViewModel}, Path=VM.SelectedCaso.ScrapConfig.RuleList}"
+                    SelectedItem="{Binding Source={StaticResource MVBaseViewModel}, Path=VM.SelectedCaso.ScrapConfig.SelectedRule}">
+                    <dg:DataGrid.Columns>
+                        <dg:DataGridTextColumn
+                            Width="30"
+                            Binding="{Binding Path=Id}"
+                            Header="ID"
+                            IsReadOnly="True" />
+                        <dg:DataGridTextColumn
+                            Binding="{Binding Path=Nome}"
+                            Header="Nome"
+                            IsReadOnly="False" />
+                        <dg:DataGridTextColumn
+                            Binding="{Binding Path=XPath}"
+                            Header="XPath"
+                            IsReadOnly="False" />
+                    </dg:DataGrid.Columns>
+
+                    <!--<dg:DataGridTextColumn
+                    Width="20"
+                    Binding="{Binding Path=Id}"
+                    Header="ID"
+                    IsReadOnly="True" />
+                <dg:DataGridTextColumn
+                    Binding="{Binding Path=Nome}"
+                    Header="Nome"
+                    IsReadOnly="False" />
+                <dg:DataGridTextColumn
+                    Binding="{Binding Path=XPath}"
+                    Header="XPath"
+                    IsReadOnly="False" />-->
+
+                </dg:DataGrid>
+                <Button
+                    Command="{Binding Source={StaticResource MVBaseViewModel}, Path=NEW_RULE}"
+                    CommandParameter="{Binding}"
+                    Content="ADD Linha" />
+
+
+            </StackPanel>
+        </ScrollViewer>
+        <TextBlock Text="PathGenerico" />
+        <TextBox
+            Height="200"
+            Margin="4"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Text="{Binding Source={StaticResource MVBaseViewModel}, Path=VM.SelectedCaso.ScrapConfig.XPathGenerico, Mode=TwoWay}"
+            TextWrapping="Wrap" />
+    </StackPanel>
+</UserControl>

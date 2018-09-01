@@ -1,0 +1,117 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigef.Poc.Ftcapp.Util", "SIGEF.POC.FTCapp.Util\Sigef.Poc.Ftcapp.Util.csproj", "{155C8F89-C4D0-4B66-B2AD-8DC9A646DA1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigef.Poc.Ftcapp.WebDriver", "Sigef.Poc.Ftcapp.WebDriver\Sigef.Poc.Ftcapp.WebDriver.csproj", "{F10437CD-0E2D-4BE6-B9B3-4E01993E6559}"
+	ProjectSection(ProjectDependencies) = postProject
+		{55BE782B-F63F-49F3-9B06-816A531A3229} = {55BE782B-F63F-49F3-9B06-816A531A3229}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigef.Poc.Ftcapp.Builder", "Sigef.Poc.Ftcapp.Builder\Sigef.Poc.Ftcapp.Builder.csproj", "{47D1E625-0F74-4949-A503-EC6017D5EB27}"
+	ProjectSection(ProjectDependencies) = postProject
+		{55BE782B-F63F-49F3-9B06-816A531A3229} = {55BE782B-F63F-49F3-9B06-816A531A3229}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigef.Poc.Ftcapp.DB", "Sigef.Poc.Ftcapp.DB\Sigef.Poc.Ftcapp.DB.csproj", "{97E9F2B7-CFB0-4251-8593-9053FB4FD521}"
+	ProjectSection(ProjectDependencies) = postProject
+		{55BE782B-F63F-49F3-9B06-816A531A3229} = {55BE782B-F63F-49F3-9B06-816A531A3229}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigef.Poc.Ftcapp.Test", "Sigef.Poc.Ftcapp.Test\Sigef.Poc.Ftcapp.Test.csproj", "{4306988B-79CF-4475-AED5-BFB1B88EEF62}"
+	ProjectSection(ProjectDependencies) = postProject
+		{55BE782B-F63F-49F3-9B06-816A531A3229} = {55BE782B-F63F-49F3-9B06-816A531A3229}
+		{F4B2C288-965F-46FC-AB22-5FDB52373E08} = {F4B2C288-965F-46FC-AB22-5FDB52373E08}
+		{CA0A26B2-F737-48B7-856F-62560EC945CB} = {CA0A26B2-F737-48B7-856F-62560EC945CB}
+		{97E9F2B7-CFB0-4251-8593-9053FB4FD521} = {97E9F2B7-CFB0-4251-8593-9053FB4FD521}
+		{F10437CD-0E2D-4BE6-B9B3-4E01993E6559} = {F10437CD-0E2D-4BE6-B9B3-4E01993E6559}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigef.Poc.Ftcapp.Entidade", "Sigef.Poc.Ftcapp.Entidade\Sigef.Poc.Ftcapp.Entidade.csproj", "{55BE782B-F63F-49F3-9B06-816A531A3229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigef.Poc.Ftcapp.Service", "Sigef.Poc.Ftcapp.Service\Sigef.Poc.Ftcapp.Service.csproj", "{F4B2C288-965F-46FC-AB22-5FDB52373E08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigef.Poc.Ftcapp.Crl", "Sigef.Poc.Ftcapp.Crl\Sigef.Poc.Ftcapp.Crl.csproj", "{CA0A26B2-F737-48B7-856F-62560EC945CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigef.Poc.Ftcapp.Interface", "Sigef.Poc.Ftcapp.Interface\Sigef.Poc.Ftcapp.Interface.csproj", "{6D6BD08D-EDDE-4201-96B9-E60198EE9BD0}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://flnserv045:8080/tfs/sigef
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FTCappEntidade\\Sigef.Poc.Ftcapp.Entidade.csproj
+		SccProjectName1 = FTCappEntidade
+		SccLocalPath1 = FTCappEntidade
+		SccProjectUniqueName2 = SIGEF.POC.FTCapp.Util\\Sigef.Poc.Ftcapp.Util.csproj
+		SccProjectName2 = SIGEF.POC.FTCapp.Util
+		SccLocalPath2 = SIGEF.POC.FTCapp.Util
+		SccProjectUniqueName3 = TestBuilder\\Sigef.Poc.Ftcapp.Builder.csproj
+		SccProjectName3 = TestBuilder
+		SccLocalPath3 = TestBuilder
+		SccProjectUniqueName4 = FTCappWebDriver\\Sigef.Poc.Ftcapp.WebDriver.csproj
+		SccProjectName4 = FTCappWebDriver
+		SccLocalPath4 = FTCappWebDriver
+		SccProjectUniqueName5 = FTCAppController\\Sigef.Poc.Ftcapp.Crl.csproj
+		SccProjectName5 = FTCAppController
+		SccLocalPath5 = FTCAppController
+		SccProjectUniqueName6 = FTCappInterface\\Sigef.Poc.Ftcapp.Interface.csproj
+		SccProjectName6 = FTCappInterface
+		SccLocalPath6 = FTCappInterface
+		SccProjectUniqueName7 = testeEF\\Sigef.Poc.Ftcapp.DB.csproj
+		SccProjectName7 = testeEF
+		SccLocalPath7 = testeEF
+		SccProjectUniqueName8 = Test\\Sigef.Poc.Ftcapp.Test.csproj
+		SccProjectName8 = Test
+		SccLocalPath8 = Test
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{155C8F89-C4D0-4B66-B2AD-8DC9A646DA1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{155C8F89-C4D0-4B66-B2AD-8DC9A646DA1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{155C8F89-C4D0-4B66-B2AD-8DC9A646DA1E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{155C8F89-C4D0-4B66-B2AD-8DC9A646DA1E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{F10437CD-0E2D-4BE6-B9B3-4E01993E6559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10437CD-0E2D-4BE6-B9B3-4E01993E6559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10437CD-0E2D-4BE6-B9B3-4E01993E6559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10437CD-0E2D-4BE6-B9B3-4E01993E6559}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D1E625-0F74-4949-A503-EC6017D5EB27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D1E625-0F74-4949-A503-EC6017D5EB27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D1E625-0F74-4949-A503-EC6017D5EB27}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{47D1E625-0F74-4949-A503-EC6017D5EB27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D1E625-0F74-4949-A503-EC6017D5EB27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97E9F2B7-CFB0-4251-8593-9053FB4FD521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97E9F2B7-CFB0-4251-8593-9053FB4FD521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97E9F2B7-CFB0-4251-8593-9053FB4FD521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97E9F2B7-CFB0-4251-8593-9053FB4FD521}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4306988B-79CF-4475-AED5-BFB1B88EEF62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4306988B-79CF-4475-AED5-BFB1B88EEF62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4306988B-79CF-4475-AED5-BFB1B88EEF62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4306988B-79CF-4475-AED5-BFB1B88EEF62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55BE782B-F63F-49F3-9B06-816A531A3229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55BE782B-F63F-49F3-9B06-816A531A3229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55BE782B-F63F-49F3-9B06-816A531A3229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55BE782B-F63F-49F3-9B06-816A531A3229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4B2C288-965F-46FC-AB22-5FDB52373E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B2C288-965F-46FC-AB22-5FDB52373E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B2C288-965F-46FC-AB22-5FDB52373E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B2C288-965F-46FC-AB22-5FDB52373E08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA0A26B2-F737-48B7-856F-62560EC945CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA0A26B2-F737-48B7-856F-62560EC945CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA0A26B2-F737-48B7-856F-62560EC945CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA0A26B2-F737-48B7-856F-62560EC945CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D6BD08D-EDDE-4201-96B9-E60198EE9BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D6BD08D-EDDE-4201-96B9-E60198EE9BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D6BD08D-EDDE-4201-96B9-E60198EE9BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D6BD08D-EDDE-4201-96B9-E60198EE9BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
